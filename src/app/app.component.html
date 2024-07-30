@@ -7,5 +7,16 @@
   <!-- @if(isAdmin()){
   <p>Only Admin can access</p>
   } -->
-  <p *ngIf="isAdmin()">Only Admin</p>
+  <!-- <p *ngIf="isAdmin()">Only Admin</p> -->
+  <!-- <ng-template appAuth="admin">
+    <p>Admin</p>
+  </ng-template> -->
+
+  <p *appAuth="'admin'" class="protected-content admin">Admin content</p>
+  <p *appAuth="'user'" class="protected-content unauthenticated">
+    user content
+  </p>
+  <p *appAuth="'guest'" class="protected-content authenticated">
+    guest content
+  </p>
 </main>
